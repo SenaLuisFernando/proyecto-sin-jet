@@ -50,3 +50,6 @@ Route::get('/logout',[sessionsController::class,'destroy'])
 Route::get('/dash',[adminController::class,'index'])
 ->middleware('auth.admin')
 ->name('admin.index');
+
+// crude 
+Route::resource('Propiedades','App\Http\Controllers\PropiedadesController');

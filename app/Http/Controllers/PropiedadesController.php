@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Propiedades;
 
-class PropiedadesController extends Controller
+class propiedadesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class PropiedadesController extends Controller
      */
     public function index()
     {
-        //
+        $propiedades = Propiedades::all();
+        return view('propiedades.index')->with('propiedades',$propiedades);
     }
 
     /**
@@ -23,7 +25,7 @@ class PropiedadesController extends Controller
      */
     public function create()
     {
-        //
+        return view('propiedades.create');
     }
 
     /**
@@ -34,7 +36,20 @@ class PropiedadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $propiedades = new Propiedades();
+
+        $propiedades->id = $request->get('id');
+        
+        $propiedades->Descripcion = $request->get('Descripcion');
+        $propiedades->tipo = $request->get('tipo');
+        $propiedades->detalle = $request->get('detalle');
+        $propiedades->ubicacion = $request->get('ubicacion');
+        $propiedades->precio = $request->get('precio');
+       
+
+       $propiedades->save();
+
+       return redirect('/Propiedades');
     }
 
     /**
@@ -56,7 +71,8 @@ class PropiedadesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $propiedades = Propiedades::find($id);
+        return view('Propiedades.edit')->with('Propiedades',$propiedades);
     }
 
     /**
@@ -68,7 +84,19 @@ class PropiedadesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $propiedades = Propiedades::find($id);
+
+        $propiedades->id = $request->get('id');
+        $propiedades->Descripcion = $request->get('Descripcion');
+        $propiedades->tipo = $request->get('tipo');
+        $propiedades->detalle = $request->get('detalle');
+        $propiedades->ubicacion = $request->get('ubicacion');
+        $propiedades->precio = $request->get('precio');
+       
+ 
+        $propiedades->save();
+ 
+        return redirect('/Propiedades');
     }
 
     /**
@@ -79,6 +107,8 @@ class PropiedadesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $propiedades = Propiedades::find($id);
+        $propiedades->delete();
+        return redirect('/Propiedades');
     }
 }
