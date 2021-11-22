@@ -10,10 +10,7 @@
     
 <form action="/Ambientes" method="POST">
   @csrf
- <!-- <div class="mb-3">
-    <label for="" class="form-label">Id</label>
-    <input id="Id" name="Id" type="number" class="form-control" tabindex="1">    
-  </div>-->
+ <!-- hola eh camnbiado el codigo deberias ver esto  se esta modificando algo uno dos </div>-->
    
 
     <label for="" class="form-label">Cuarto</label>
