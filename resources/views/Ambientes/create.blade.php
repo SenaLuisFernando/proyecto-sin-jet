@@ -10,7 +10,7 @@
     
 <form action="/Propiedades" method="POST">
   @csrf
- <!-- hola eh camnbiado el codigo deberias ver esto   </div>-->
+ <!-- hola eh camnbiado el codigo deberias ver esto  se esta modificando algo </div>-->
    
 
     <label for="" class="form-label">Descripción</label>
