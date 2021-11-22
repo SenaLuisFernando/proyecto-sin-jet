@@ -97,7 +97,7 @@
 
 <!-- Header Starts -->
 <div class="header">
-<a href="{{route('login.index')}}"><img src="{{ asset('inmolibs/images/logo.png')}}" alt="Realestate"></a>
+<a href="{{route('login.index')}}"><img src="{{ asset('inmolibs/images/unnamed.png')}}" alt="Realestate"></a>
 
               <ul class="pull-right">
                 <li><a href="buysalerent.php">Buy</a></li>

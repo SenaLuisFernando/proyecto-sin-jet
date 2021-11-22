@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\vistasdeinmo;
+use App\Http\Controllers\cartController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\tiposController;
+
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\sessionsController;
-use App\Http\Controllers\adminController;
 use App\Http\Controllers\ambientesController;
 use App\Http\Controllers\propiedadesController;
-use App\Http\Controllers\tiposController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,9 +31,10 @@ Route::get('/about.php',[vistasdeinmo::class,'vista2']);
 Route::get('/agents.php',[vistasdeinmo::class,'vista3']);
 Route::get('/blog.php',[vistasdeinmo::class,'vista4']);
 Route::get('/contact.php',[vistasdeinmo::class,'vista5']);
-Route::get('/buysalerent.php',[vistasdeinmo::class,'vista6']);
+//Route::get('/buysalerent.php',[vistasdeinmo::class,'vista6']);
 Route::get('/property-detail.php',[vistasdeinmo::class,'vista7']);
 
+Route::get('/buysalerent.php',[cartController::class,'shop']);
 //registro funcional
 Route::get('/register.php',[registerController::class,'create'])
 ->name('register.index');
