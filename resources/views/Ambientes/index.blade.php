@@ -23,6 +23,7 @@
             <th scope="col">Garaje</th>
             <th scope="col">Cocina</th>
             <th scope="col">Baño</th>
+            <th scope="col">Acciones</th>
             
             
         </tr>

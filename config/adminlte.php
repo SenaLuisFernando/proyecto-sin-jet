@@ -247,8 +247,8 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Propiedades',
-            'url'         => 'Propiedades',
+            'text'        => 'Agentes',
+            'url'         => 'Agentes',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 'CRUD',
             'label_color' => 'warning',
@@ -256,6 +256,29 @@ return [
         [
             'text'        => 'Ambientes',
             'url'         => 'Ambientes',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 'CRUD',
+            'label_color' => 'warning',
+        ],
+        [
+            'text'        => 'Propiedades',
+            'url'         => 'Propiedades',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 'CRUD',
+            'label_color' => 'warning',
+        ],
+       
+        [
+            'text'        => 'Tipos de Propiedades',
+            'url'         => 'Tipos',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 'CRUD',
+            'label_color' => 'warning',
+        ],
+        
+        [
+            'text'        => 'Tipos de Ofertas',
+            'url'         => 'Tipos_Ofertas',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 'CRUD',
             'label_color' => 'warning',

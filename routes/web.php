@@ -5,6 +5,9 @@ use App\Http\Controllers\vistasdeinmo;
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\sessionsController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\ambientesController;
+use App\Http\Controllers\propiedadesController;
+use App\Http\Controllers\tiposController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,3 +56,5 @@ Route::get('/dash',[adminController::class,'index'])
 
 // crude 
 Route::resource('Propiedades','App\Http\Controllers\PropiedadesController');
+Route::resource('Ambientes','App\Http\Controllers\AmbientesController');
+Route::resource('Tipos','App\Http\Controllers\TiposController');

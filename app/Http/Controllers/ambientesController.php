@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ambientes;
 use Illuminate\Http\Request;
 
 class ambientesController extends Controller
@@ -13,8 +14,10 @@ class ambientesController extends Controller
      */
     public function index()
     {
-        //
+        $ambientes = Ambientes::all();
+        return view('ambientes.index')->with('ambientes',$ambientes);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +26,7 @@ class ambientesController extends Controller
      */
     public function create()
     {
-        //
+        return view('ambientes.create');
     }
 
     /**
@@ -34,7 +37,20 @@ class ambientesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ambientes = new Ambientes();
+
+        $ambientes->id = $request->get('id');
+        
+        $ambientes->cuarto = $request->get('cuarto');
+        $ambientes->sala = $request->get('sala');
+        $ambientes->garaje = $request->get('garaje');
+        $ambientes->cocina = $request->get('cocina');
+        $ambientes->baño = $request->get('baño');
+       
+
+       $ambientes->save();
+
+       return redirect('/Ambientes');
     }
 
     /**
@@ -56,7 +72,8 @@ class ambientesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ambientes = Ambientes::find($id);
+        return view('Ambientes.edit')->with('Ambientes',$ambientes);
     }
 
     /**
@@ -68,7 +85,19 @@ class ambientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ambientes = Ambientes::find($id);
+
+        $ambientes->id = $request->get('id');
+        $ambientes->cuarto = $request->get('cuarto');
+        $ambientes->sala = $request->get('sala');
+        $ambientes->garaje = $request->get('garaje');
+        $ambientes->cocina = $request->get('cocina');
+        $ambientes->baño = $request->get('baño');
+       
+ 
+        $ambientes->save();
+ 
+        return redirect('/Ambientes');
     }
 
     /**
@@ -79,6 +108,8 @@ class ambientesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ambientes = Ambientes::find($id);
+        $ambientes->delete();
+        return redirect('/Ambientes');
     }
 }

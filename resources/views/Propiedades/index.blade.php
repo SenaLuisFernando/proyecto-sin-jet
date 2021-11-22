@@ -23,6 +23,7 @@
             <th scope="col">Detalle</th>
             <th scope="col">Ubicacion</th>
             <th scope="col">Precio</th>
+            <th scope="col">Acciones</th>
             
             
         </tr>
