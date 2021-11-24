@@ -277,8 +277,8 @@ return [
         ],
         
         [
-            'text'        => 'Tipos de Ofertas',
-            'url'         => 'Tipos_Ofertas',
+            'text'        => 'Ofertas',
+            'url'         => 'Ofertas',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 'CRUD',
             'label_color' => 'warning',

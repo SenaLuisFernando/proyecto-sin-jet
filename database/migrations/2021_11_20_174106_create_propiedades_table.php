@@ -20,6 +20,7 @@ class CreatePropiedadesTable extends Migration
             $table->string('detalle','500');
             $table->string('tipo','100');
             $table->string('ubicacion','100');
+           // $table->string('imagen');
             $table->timestamps();
         });
     }

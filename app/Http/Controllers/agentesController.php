@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agentes;
 use Illuminate\Http\Request;
 
 class agentesController extends Controller
@@ -13,7 +14,8 @@ class agentesController extends Controller
      */
     public function index()
     {
-        //
+        $agentes = Agentes::all();
+        return view('agentes.index')->with('agentes',$agentes);
     }
 
     /**
@@ -23,7 +25,7 @@ class agentesController extends Controller
      */
     public function create()
     {
-        //
+        return view('agentes.create');
     }
 
     /**
@@ -34,7 +36,20 @@ class agentesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $agentes = new Agentes();
+
+        $agentes->id = $request->get('id');
+        
+        $agentes->nombre = $request->get('nombre');
+        $agentes->telefono = $request->get('telefono');
+        $agentes->correo = $request->get('correo');
+        $agentes->imagen = $request->get('imagen');
+        $agentes->detalle = $request->get('detalle');
+       
+
+       $agentes->save();
+
+       return redirect('/Agentes');
     }
 
     /**
@@ -56,7 +71,8 @@ class agentesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $agentes = Agentes::find($id);
+        return view('Agentes.edit')->with('Agentes',$agentes);
     }
 
     /**
@@ -68,7 +84,19 @@ class agentesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $agentes = Agentes::find($id);
+
+        $agentes->id = $request->get('id');
+        $agentes->nombre = $request->get('nombre');
+        $agentes->telefono = $request->get('telefono');
+        $agentes->correo = $request->get('correo');
+        $agentes->imagen = $request->get('imagen');
+        $agentes->detalle = $request->get('detalle');
+       
+ 
+        $agentes->save();
+ 
+        return redirect('/Agentes');
     }
 
     /**
@@ -79,6 +107,8 @@ class agentesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $agentes = Agentes::find($id);
+        $agentes->delete();
+        return redirect('/Agentes');
     }
 }

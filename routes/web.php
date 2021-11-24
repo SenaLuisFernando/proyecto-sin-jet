@@ -4,12 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\vistasdeinmo;
 use App\Http\Controllers\cartController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\agentesController;
+use App\Http\Controllers\ofertasController;
 use App\Http\Controllers\tiposController;
 
 use App\Http\Controllers\registerController;
 use App\Http\Controllers\sessionsController;
 use App\Http\Controllers\ambientesController;
 use App\Http\Controllers\propiedadesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,3 +64,5 @@ Route::get('/dash',[adminController::class,'index'])
 Route::resource('Propiedades','App\Http\Controllers\PropiedadesController');
 Route::resource('Ambientes','App\Http\Controllers\AmbientesController');
 Route::resource('Tipos','App\Http\Controllers\TiposController');
+Route::resource('Agentes','App\Http\Controllers\AgentesController');
+Route::resource('Ofertas','App\Http\Controllers\OfertasController');
